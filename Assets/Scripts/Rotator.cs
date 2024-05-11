@@ -4,7 +4,7 @@ public class CubeAnimation : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    void Update()
+    private void Update()
     {
         transform.Rotate(transform.up * _speed * Time.deltaTime);
     }

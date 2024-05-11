@@ -2,6 +2,7 @@ using UnityEngine;
 public class CapsuleAnimation : MonoBehaviour
 {
     [SerializeField] private float _speed;
+
     private int _maxSize;
     private int _startSize;
     private bool _isNeedToGrow;
