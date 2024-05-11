@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SphereAnimation : MonoBehaviour
+public class Mover : MonoBehaviour
 {
     [SerializeField] private Vector3 _currentPosition;
 
@@ -8,8 +8,6 @@ public class SphereAnimation : MonoBehaviour
     private int _minPosition;
     private bool _isNeedToReverse;
 
-
-    // Start is called before the first frame update
     private void Start()
     {
         _maxPosition = 6;
@@ -17,7 +15,6 @@ public class SphereAnimation : MonoBehaviour
         _isNeedToReverse = false;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         if(_isNeedToReverse)

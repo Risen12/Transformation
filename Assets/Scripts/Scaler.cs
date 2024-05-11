@@ -1,16 +1,17 @@
 using UnityEngine;
-public class CapsuleAnimation : MonoBehaviour
+
+public class Scaler : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    private int _maxSize;
-    private int _startSize;
-    private bool _isNeedToGrow;
+    protected int _maxSize;
+    protected int _minSize;
+    protected bool _isNeedToGrow;
 
     private void Start()
     {
         _maxSize = 2;
-        _startSize = 1;
+        _minSize = 1;
         _isNeedToGrow = true;
     }
 
@@ -24,21 +25,21 @@ public class CapsuleAnimation : MonoBehaviour
         VerifyScale();
     }
 
-    private void Grow()
+    protected void Grow()
     {
         Vector3 scale = new Vector3(_speed * Time.deltaTime, _speed * Time.deltaTime, _speed * Time.deltaTime);
         transform.localScale += scale;
     }
 
-    private void Decrease()
+    protected void Decrease()
     {
         Vector3 scale = new Vector3(_speed * Time.deltaTime, _speed * Time.deltaTime, _speed * Time.deltaTime);
         transform.localScale -= scale;
     }
 
-    private void VerifyScale()
+    protected void VerifyScale()
     {
-        if (transform.localScale.x <= _startSize && transform.localScale.y <= _startSize && transform.localScale.z <= _startSize)
+        if (transform.localScale.x <= _minSize && transform.localScale.y <= _minSize && transform.localScale.z <= _minSize)
             _isNeedToGrow = true;
         else if(transform.localScale.x > _maxSize && transform.localScale.y > _maxSize && transform.localScale.z > _maxSize)
             _isNeedToGrow = false;
