@@ -4,6 +4,7 @@ public class SecondCubeAnimation : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
+
     private int _maxSize;
     private int _minSize;
     private Vector3 _direction;

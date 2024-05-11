@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class SphereAnimation : MonoBehaviour
 {
-    private float _speed;
+    [SerializeField] private Vector3 _currentPosition;
+
     private int _maxPosition;
     private int _minPosition;
     private bool _isNeedToReverse;
-    [SerializeField] private Vector3 _currentPosition;
+
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _speed = 0.1f;
         _maxPosition = 6;
         _minPosition = 2;
         _isNeedToReverse = false;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if(_isNeedToReverse)
         transform.Translate(-_currentPosition);
